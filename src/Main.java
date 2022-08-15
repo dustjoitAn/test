@@ -16,10 +16,13 @@ public class Main {
 
 		Money third = new Money(initialMoney);
 
+		Money forth = (Money) secondMoney.clone();
+
 		MoneyOperation moneyOperation = new MoneyOperationImpl();
 
 		System.out.println(moneyOperation.add(initialMoney, secondMoney));
 		System.out.println(secondMoney);
 		System.out.println(third);
+		System.out.println(forth);
 	}
 }

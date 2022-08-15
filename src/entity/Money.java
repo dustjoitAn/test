@@ -38,4 +38,16 @@ public class Money {
 	@Override public String toString() {
 		return value + " " + currency;
 	}
+	
+	@Override
+	public Object clone() {
+		Money money;
+		try {
+			money = (Money) super.clone();
+		} catch (CloneNotSupportedException e) {
+			money = new Money(
+					this.getCurrency(), this.getValue());
+		}
+		return money;
+	}
 }
